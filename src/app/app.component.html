@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div class="row">
+  <div class="col-sm-6 offset-4">
+
+    <button (click)="increment()">Increment</button>
+    <div>Current Count: {{ counter | async }}</div>
+    <button (click)="decrement()">Decrement</button>
+
+    <button (click)="reset()">Reset Counter</button>
+  </div>
+</div>
