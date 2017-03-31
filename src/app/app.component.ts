@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from './counter';
+import {INCREMENT, DECREMENT, RESET, SET} from './counterStore';
 import {Observable} from "rxjs/Observable";
 
 @Component({
@@ -8,6 +8,7 @@ import {Observable} from "rxjs/Observable";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 
   counter:Observable<number>;
@@ -22,6 +23,10 @@ export class AppComponent {
 
   decrement(){
     this.store.dispatch({ type: DECREMENT });
+  }
+
+  set(value) {
+    this.store.dispatch({type: SET, payload: value})
   }
 
   reset(){

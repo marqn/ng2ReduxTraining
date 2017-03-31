@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './counter';
+import { counterReducer } from './counterStore';
 
 @NgModule({
   declarations: [
