@@ -2,18 +2,25 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {INCREMENT, DECREMENT, RESET, SET} from './counterStore';
 import {Observable} from "rxjs/Observable";
+import {TempServices, Contact} from "./temp-services.service";
+import {ListItemComponent} from "./list-item/list-item.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TempServices]
 })
-
 export class AppComponent {
 
   counter:Observable<number>;
+  contacts:Array<Contact>;
 
-  constructor(private store: Store<number>){
+  ngOnInit() {
+    this.contacts = this.tempService.contacts;
+  }
+
+  constructor(private store: Store<number>, private tempService:TempServices){
     this.counter = store.select('counter');
   }
 
@@ -31,5 +38,9 @@ export class AppComponent {
 
   reset(){
     this.store.dispatch({ type: RESET });
+  }
+
+  addTodo() {
+    console.log('enter pressed');
   }
 }

@@ -9,3 +9,15 @@
     <button (click)="set(2)">Add +2</button>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-6 offset-4">
+    <ul>
+      <li *ngFor="let contact of contacts">
+        {{contact.id}}
+        {{contact.name}}
+        {{contact.age}}
+        {{contact.email}}
+      </li>
+    </ul>
+  </div>
+</div>
