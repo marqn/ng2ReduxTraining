@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import {INCREMENT, DECREMENT, RESET, SET} from './counterStore';
 import {Observable} from "rxjs/Observable";
 import {TempServices, Contact} from "./temp-services.service";
-import {ListItemComponent} from "./list-item/list-item.component";
 
 @Component({
   selector: 'app-root',

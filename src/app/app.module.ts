@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counterStore';
-import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListItemComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
